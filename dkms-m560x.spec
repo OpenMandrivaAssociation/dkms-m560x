@@ -3,7 +3,7 @@
 %define version 0.4.0
 %define svn 20080229
 %define rel 1
-%define release %mkrel 1.%{svn}.%{rel}
+%define release %mkrel 0.%{svn}.%{rel}
 %define distname %{module}-driver-%{version}-%{svn}
 
 # DATE=`date +%Y%m%d`
