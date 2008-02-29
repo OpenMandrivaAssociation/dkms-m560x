@@ -15,6 +15,7 @@ Name: %{name}
 Version: %{version}
 Release: %{release}
 Source0: %{distname}.tar.bz2
+Patch0: m560x-driver-0.4.0-20080229-hardware.patch
 License: GPL
 Group: System/Kernel and hardware
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
@@ -28,6 +29,7 @@ m560x is a driver for the Ali M5603C and M5602 webcam chipsets.
 
 %prep
 %setup -q -n %{distname}
+%patch0 -p1 -b .hardware
 rm -rf fw/
 
 cat > dkms.conf <<EOF
