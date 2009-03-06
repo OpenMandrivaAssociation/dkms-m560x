@@ -2,7 +2,7 @@
 %define name dkms-%{module}
 %define version 0.4.0
 %define svn 20080229
-%define rel 1
+%define rel 2
 %define release %mkrel 0.%{svn}.%{rel}
 %define distname %{module}-driver-%{version}-%{svn}
 
