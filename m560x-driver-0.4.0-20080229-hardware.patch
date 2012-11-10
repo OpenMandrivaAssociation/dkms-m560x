@@ -1,0 +1,13 @@
+diff -p -up m560x-driver-0.4.0-20080229/m560x_core.c.hardware m560x-driver-0.4.0-20080229/m560x_core.c
+--- m560x-driver-0.4.0-20080229/m560x_core.c.hardware	2007-09-26 07:41:38.000000000 +0200
++++ m560x-driver-0.4.0-20080229/m560x_core.c	2008-02-29 13:57:40.000000000 +0100
+@@ -2828,7 +2828,9 @@ static int usb_m560x_probe(struct usb_in
+   strcpy(cam->vdev->name, "Ali M560x-based USB Camera");
+   cam->vdev->owner    = THIS_MODULE;
+   cam->vdev->type     = VID_TYPE_CAPTURE;
++#if LINUX_VERSION_CODE < KERNEL_VERSION(2,6,24)
+   cam->vdev->hardware = VID_HARDWARE_M560X;
++#endif
+   cam->vdev->fops     = &v4l_m560x_fops;
+   cam->vdev->release  = video_device_release;
+   cam->vdev->minor    = -1;
